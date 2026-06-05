@@ -25,61 +25,64 @@ export function Features() {
 
   const features = [
     {
-      icon: <Car className="w-10 h-10 text-primary" />,
+      icon: <Car className="w-8 h-8 text-[#C9A84C]" strokeWidth={1.5} />,
       number: 500,
       suffix: "+",
-      title: "Keng Tanlov",
-      desc: "Barcha toifadagi eng so'nggi rusumdagi avtomobillar parki."
+      title: "Keng tanlov",
+      desc: "Barcha toifadagi eng so'nggi premium rusumdagi avtomobillar parki."
     },
     {
-      icon: <Clock className="w-10 h-10 text-primary" />,
+      icon: <Clock className="w-8 h-8 text-[#C9A84C]" strokeWidth={1.5} />,
       number: 24,
       suffix: "/7",
-      title: "Mijozlarni Qo'llab",
-      desc: "Kunning istalgan vaqtida texnik va informatsion yordam."
+      title: "Doim yordamda",
+      desc: "Kunning istalgan vaqtida professional texnik va informatsion yordam."
     },
     {
-      icon: <ShieldCheck className="w-10 h-10 text-primary" />,
+      icon: <ShieldCheck className="w-8 h-8 text-[#C9A84C]" strokeWidth={1.5} />,
       number: 100,
       suffix: "%",
-      title: "To'liq Sug'urta",
-      desc: "Xotirjam sayohat uchun har bir avtomobil to'liq sug'urtalangan."
+      title: "Eng yaxshi narxlar",
+      desc: "Premium xizmat uchun raqobatbardosh va shaffof narxlash."
     },
     {
-      icon: <Zap className="w-10 h-10 text-primary" />,
+      icon: <Zap className="w-8 h-8 text-[#C9A84C]" strokeWidth={1.5} />,
       number: 1,
       suffix: " soat",
-      title: "Tez Yetkazish",
-      desc: "Avtomobilni ko'rsatilgan manzilga qisqa vaqt ichida yetkazamiz."
+      title: "1 soat ichida",
+      desc: "Avtomobilni ko'rsatilgan manzilga qisqa vaqt ichida yetkazib berish."
     }
   ];
 
   return (
-    <section ref={sectionRef} className="py-24 bg-[#111827] relative overflow-hidden" id="xizmatlar">
-      {/* Decorative Manga lines */}
-      <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-transparent via-primary/50 to-transparent" />
-      <div className="absolute inset-0 opacity-10 bg-[linear-gradient(0deg,transparent_24%,rgba(255,255,255,.3)_25%,rgba(255,255,255,.3)_26%,transparent_27%,transparent_74%,rgba(255,255,255,.3)_75%,rgba(255,255,255,.3)_76%,transparent_77%,transparent),linear-gradient(90deg,transparent_24%,rgba(255,255,255,.3)_25%,rgba(255,255,255,.3)_26%,transparent_27%,transparent_74%,rgba(255,255,255,.3)_75%,rgba(255,255,255,.3)_76%,transparent_77%,transparent)] bg-[length:50px_50px]" />
-
-      <div className="container mx-auto px-4 relative z-10">
-        <div className="text-center mb-16">
-          <h2 className="text-3xl md:text-5xl font-display font-bold text-white mb-4">Nima uchun biz?</h2>
-          <div className="w-24 h-1 bg-primary rounded-full mb-6 mx-auto"></div>
+    <section ref={sectionRef} className="py-24 bg-[#0A0A0A] border-t border-white/[0.04]" id="xizmatlar">
+      <div className="container mx-auto px-4">
+        <div className="text-center mb-20">
+          <span className="font-sans text-xs tracking-[0.2em] text-[#C9A84C] uppercase mb-4 block">
+            AFZALLIKLARIMIZ
+          </span>
+          <h2 className="text-4xl md:text-5xl font-display font-semibold text-white mb-6">
+            Nima uchun RentCar?
+          </h2>
+          <div className="divider-gold w-24 mx-auto"></div>
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
           {features.map((feat, idx) => (
             <div 
               key={idx} 
-              className="bg-background/50 backdrop-blur-sm border border-white/10 p-8 rounded-2xl text-center group hover:bg-[#1A2235] transition-colors"
+              className="bg-[#111111] border border-white/[0.04] p-10 group hover:border-[#C9A84C]/50 transition-colors duration-500 relative overflow-hidden"
             >
-              <div className="inline-flex items-center justify-center p-4 bg-white/5 rounded-2xl mb-6 group-hover:scale-110 transition-transform duration-300">
+              <div className="absolute top-0 left-0 w-full h-[1px] bg-gradient-to-r from-transparent via-[#C9A84C] to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+              
+              <div className="mb-8">
                 {feat.icon}
               </div>
-              <h3 className="text-4xl font-display font-bold text-white mb-2">
-                <Counter target={feat.number} visible={isVisible} />{feat.suffix}
+              <h3 className="text-3xl font-display font-semibold text-white mb-2 flex items-baseline gap-1">
+                <Counter target={feat.number} visible={isVisible} /><span className="text-xl font-serif-light text-[#C9A84C]">{feat.suffix}</span>
               </h3>
-              <h4 className="text-xl font-bold text-white mb-3">{feat.title}</h4>
-              <p className="text-muted-foreground text-sm">{feat.desc}</p>
+              <h4 className="text-lg font-sans font-medium text-[#F5F0E8] mb-4 uppercase tracking-widest text-xs">{feat.title}</h4>
+              <p className="text-[#888880] text-sm leading-relaxed font-light">{feat.desc}</p>
             </div>
           ))}
         </div>

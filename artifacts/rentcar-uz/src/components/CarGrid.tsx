@@ -1,151 +1,145 @@
 import { Button } from "@/components/ui/button";
-import { Gauge, Users, Fuel } from "lucide-react";
+import { Gauge, Users, Fuel, ArrowRight } from "lucide-react";
 
 const cars = [
   {
     id: 1,
-    name: "SUV Max",
-    category: "SUV",
-    price: "450,000",
-    speed: "220",
-    seats: 7,
+    name: "BMW 7 Series",
+    category: "Premium Sedan",
+    price: "1,200,000",
+    speed: "250",
+    seats: 4,
     fuel: "Benzin",
-    color: "#3B82F6", // blue
-    bgGradient: "linear-gradient(135deg, rgba(59,130,246,0.1), rgba(17,24,39,1))",
-    bgPattern: "radial-gradient(circle at top right, rgba(59,130,246,0.2) 0%, transparent 60%)"
+    image: "https://images.unsplash.com/photo-1555215695-3004980ad54e?w=600&q=80"
   },
   {
     id: 2,
-    name: "Sport Convertible",
-    category: "Sport",
-    price: "850,000",
-    speed: "320",
-    seats: 2,
-    fuel: "Benzin",
-    color: "#EF4444", // red
-    bgGradient: "linear-gradient(135deg, rgba(239,68,68,0.1), rgba(17,24,39,1))",
-    bgPattern: "linear-gradient(45deg, transparent 48%, rgba(239,68,68,0.1) 49%, rgba(239,68,68,0.1) 51%, transparent 52%)"
+    name: "Mercedes S-Class",
+    category: "Premium Sedan",
+    price: "1,500,000",
+    speed: "250",
+    seats: 4,
+    fuel: "Gibrid",
+    image: "https://images.unsplash.com/photo-1618843479313-40f8afb4b4d8?w=600&q=80"
   },
   {
     id: 3,
-    name: "Elektr Sedan",
-    category: "Elektr",
-    price: "350,000",
-    speed: "250",
+    name: "Porsche Cayenne",
+    category: "Luxury SUV",
+    price: "950,000",
+    speed: "280",
     seats: 5,
-    fuel: "Elektr",
-    color: "#10B981", // green
-    bgGradient: "linear-gradient(135deg, rgba(16,185,129,0.1), rgba(17,24,39,1))",
-    bgPattern: "radial-gradient(circle at center, rgba(16,185,129,0.15) 0%, transparent 70%)"
+    fuel: "Benzin",
+    image: "https://images.unsplash.com/photo-1503376780353-7e6692767b70?w=600&q=80"
   },
   {
     id: 4,
-    name: "Premium Biznes",
-    category: "Biznes",
-    price: "600,000",
-    speed: "260",
-    seats: 4,
-    fuel: "Gibrid",
-    color: "#F59E0B", // gold
-    bgGradient: "linear-gradient(135deg, rgba(245,158,11,0.1), rgba(17,24,39,1))",
-    bgPattern: "repeating-linear-gradient(90deg, transparent, transparent 20px, rgba(245,158,11,0.05) 20px, rgba(245,158,11,0.05) 21px)"
+    name: "Range Rover",
+    category: "Luxury SUV",
+    price: "1,100,000",
+    speed: "240",
+    seats: 5,
+    fuel: "Dizel",
+    image: "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=600&q=80"
   },
   {
     id: 5,
-    name: "Kompakt Plus",
-    category: "Sedan",
-    price: "250,000",
-    speed: "180",
-    seats: 5,
+    name: "Audi A8",
+    category: "Premium Sedan",
+    price: "1,050,000",
+    speed: "250",
+    seats: 4,
     fuel: "Benzin",
-    color: "#C0C8DC", // silver
-    bgGradient: "linear-gradient(135deg, rgba(192,200,220,0.1), rgba(17,24,39,1))",
-    bgPattern: "linear-gradient(180deg, rgba(192,200,220,0.1) 0%, transparent 100%)"
+    image: "https://images.unsplash.com/photo-1609521263047-f8f205293f24?w=600&q=80"
   },
   {
     id: 6,
-    name: "Offroad Pro",
-    category: "Offroad",
-    price: "500,000",
-    speed: "200",
+    name: "Tesla Model S",
+    category: "Elektr",
+    price: "850,000",
+    speed: "320",
     seats: 5,
-    fuel: "Dizel",
-    color: "#F97316", // orange
-    bgGradient: "linear-gradient(135deg, rgba(249,115,22,0.1), rgba(17,24,39,1))",
-    bgPattern: "radial-gradient(circle at bottom left, rgba(249,115,22,0.2) 0%, transparent 60%)"
+    fuel: "Elektr",
+    image: "https://images.unsplash.com/photo-1560958089-b8a1929cea89?w=600&q=80"
   }
 ];
 
 export function CarGrid() {
   return (
-    <section className="py-20 bg-background" id="mashinalar">
+    <section className="py-24 bg-[#0A0A0A]" id="mashinalar">
       <div className="container mx-auto px-4">
         <div className="flex flex-col items-center text-center mb-16">
-          <h2 className="text-3xl md:text-5xl font-display font-bold text-white mb-4">Bizning Avtomobillar</h2>
-          <div className="w-24 h-1 bg-primary rounded-full mb-6"></div>
-          <p className="text-muted-foreground max-w-2xl">
-            Har qanday ehtiyoj uchun mukammal avtomobil. Sport avtomobillaridan tortib, oilaviy SUV largacha.
-          </p>
+          <span className="font-sans text-xs tracking-[0.2em] text-[#C9A84C] uppercase mb-4">
+            BIZNING AVTOPARK
+          </span>
+          <h2 className="text-4xl md:text-5xl font-display font-semibold text-white mb-6">
+            Tanlangan Premium Avtomobillar
+          </h2>
+          <div className="divider-gold w-24"></div>
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {cars.map((car) => (
             <div 
               key={car.id}
-              className="group bg-card rounded-2xl overflow-hidden border border-white/5 transition-all duration-500 hover:-translate-y-2 hover:shadow-2xl hover:shadow-primary/20 relative"
+              className="group card-luxury relative overflow-hidden"
               data-testid={`car-card-${car.id}`}
             >
-              {/* Manga/Anime stylized background area */}
-              <div 
-                className="h-48 w-full relative overflow-hidden flex items-center justify-center border-b border-white/5"
-                style={{ background: car.bgGradient }}
-              >
-                <div className="absolute inset-0 opacity-50 group-hover:translate-x-2 transition-transform duration-700" style={{ background: car.bgPattern }}></div>
-                {/* Silhouette placeholder for car (since no images) */}
-                <div className="relative z-10 w-3/4 h-24 bg-gradient-to-r from-black/40 to-transparent blur-md absolute bottom-4 rounded-[100%]"></div>
-                <div className="relative z-20 font-display text-5xl font-black italic opacity-20 text-white select-none pointer-events-none tracking-tighter" style={{ color: car.color }}>
-                  {car.category.toUpperCase()}
-                </div>
+              <div className="h-56 w-full relative overflow-hidden">
+                <img 
+                  src={car.image} 
+                  alt={car.name} 
+                  className="w-full h-full object-cover transition-all duration-700 filter grayscale-[30%] group-hover:grayscale-0 group-hover:scale-105"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-[#111111] via-transparent to-transparent"></div>
               </div>
 
-              <div className="p-6">
-                <div className="flex justify-between items-start mb-4">
+              <div className="p-8 relative">
+                <div className="flex justify-between items-start mb-6">
                   <div>
-                    <h3 className="text-xl font-bold text-white mb-1 font-display">{car.name}</h3>
-                    <span 
-                      className="text-xs font-semibold px-2 py-1 rounded-sm uppercase tracking-wider border"
-                      style={{ color: car.color, borderColor: `${car.color}40`, backgroundColor: `${car.color}10` }}
-                    >
+                    <span className="inline-block px-3 py-1 border border-[#C9A84C]/40 text-[#C9A84C] text-[10px] uppercase tracking-widest mb-3 rounded-full">
                       {car.category}
                     </span>
-                  </div>
-                  <div className="text-right">
-                    <p className="text-sm text-muted-foreground mb-1">Kunlik</p>
-                    <p className="text-lg font-bold text-white">{car.price} <span className="text-xs font-normal">UZS</span></p>
+                    <h3 className="text-2xl font-display font-semibold text-white tracking-wide">{car.name}</h3>
                   </div>
                 </div>
 
-                <div className="grid grid-cols-3 gap-2 py-4 border-y border-white/5 mb-6">
-                  <div className="flex flex-col items-center justify-center gap-1 text-muted-foreground">
-                    <Gauge className="w-5 h-5" />
-                    <span className="text-xs">{car.speed} km/h</span>
+                <div className="mb-6">
+                  <p className="text-[#888880] font-sans text-sm mb-1">Kunlik tarif</p>
+                  <p className="text-[#F5F0E8] font-sans text-lg">{car.price} UZS <span className="text-xs text-[#555550]">/ kun</span></p>
+                </div>
+
+                <div className="flex justify-between py-4 border-t border-b border-white/[0.04] mb-8">
+                  <div className="flex items-center gap-2 text-[#888880]">
+                    <Gauge className="w-4 h-4 text-[#C9A84C]" />
+                    <span className="text-xs font-sans">{car.speed}</span>
                   </div>
-                  <div className="flex flex-col items-center justify-center gap-1 text-muted-foreground border-x border-white/5">
-                    <Users className="w-5 h-5" />
-                    <span className="text-xs">{car.seats} o'rindiq</span>
+                  <div className="flex items-center gap-2 text-[#888880]">
+                    <Users className="w-4 h-4 text-[#C9A84C]" />
+                    <span className="text-xs font-sans">{car.seats}</span>
                   </div>
-                  <div className="flex flex-col items-center justify-center gap-1 text-muted-foreground">
-                    <Fuel className="w-5 h-5" />
-                    <span className="text-xs">{car.fuel}</span>
+                  <div className="flex items-center gap-2 text-[#888880]">
+                    <Fuel className="w-4 h-4 text-[#C9A84C]" />
+                    <span className="text-xs font-sans">{car.fuel}</span>
                   </div>
                 </div>
 
-                <Button className="w-full bg-white/5 hover:bg-primary text-white border border-white/10 hover:border-primary transition-colors font-display tracking-widest">
+                <a 
+                  href="#" 
+                  className="inline-flex items-center text-[#C9A84C] font-sans text-xs uppercase tracking-widest font-semibold group/btn"
+                >
                   BRON QILISH
-                </Button>
+                  <ArrowRight className="w-4 h-4 ml-2 transition-transform group-hover/btn:translate-x-2" />
+                </a>
               </div>
             </div>
           ))}
+        </div>
+        
+        <div className="mt-16 text-center">
+          <Button variant="outline" className="border-[#C9A84C] text-[#C9A84C] hover:bg-[#C9A84C] hover:text-black rounded-none px-10 h-14 font-sans text-xs tracking-widest uppercase">
+            BARCHA AVTOMOBILLARNI KO'RISH
+          </Button>
         </div>
       </div>
     </section>

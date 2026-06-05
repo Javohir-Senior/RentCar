@@ -9,6 +9,7 @@ import { Hero } from "./components/Hero";
 import { FilterBar } from "./components/FilterBar";
 import { CarGrid } from "./components/CarGrid";
 import { Features } from "./components/Features";
+import { Gallery } from "./components/Gallery";
 import { Testimonials } from "./components/Testimonials";
 import { Footer } from "./components/Footer";
 
@@ -16,13 +17,14 @@ const queryClient = new QueryClient();
 
 function Home() {
   return (
-    <div className="min-h-screen w-full flex flex-col">
+    <div className="min-h-screen w-full flex flex-col bg-[#0A0A0A]">
       <Navbar />
       <main className="flex-1">
         <Hero />
         <FilterBar />
         <CarGrid />
         <Features />
+        <Gallery />
         <Testimonials />
       </main>
       <Footer />
