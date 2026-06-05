@@ -23,11 +23,7 @@ export function Hero() {
         data-testid="hero-video"
       >
         <source
-          src="https://assets.mixkit.co/videos/preview/mixkit-driving-a-modern-sports-car-at-high-speed-34710-large.mp4"
-          type="video/mp4"
-        />
-        <source
-          src="https://assets.mixkit.co/videos/preview/mixkit-sports-car-passing-by-in-blurred-light-trail-34695-large.mp4"
+          src={`${import.meta.env.BASE_URL}videos/mustang.mp4`}
           type="video/mp4"
         />
       </video>
