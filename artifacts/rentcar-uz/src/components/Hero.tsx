@@ -1,79 +1,128 @@
-import { CarCanvas } from "./CarCanvas";
 import { motion } from "framer-motion";
+
+const FADE_UP = {
+  hidden: { opacity: 0, y: 28 },
+  visible: (delay = 0) => ({
+    opacity: 1,
+    y: 0,
+    transition: { duration: 0.9, ease: [0.22, 1, 0.36, 1], delay },
+  }),
+};
 
 export function Hero() {
   return (
-    <section className="relative min-h-[100dvh] bg-[#080C10] overflow-hidden pt-14">
-      <div className="absolute inset-0 grid lg:grid-cols-2 gap-0">
-        
-        {/* Left Content */}
-        <div className="relative z-10 flex flex-col justify-center px-[clamp(24px,6vw,96px)] py-20 lg:py-0">
-          <motion.div 
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, ease: "easeOut" }}
-            className="flex flex-col gap-6"
-          >
-            <span className="text-[#0099FF] text-xs uppercase tracking-[0.3em] font-medium">
-              PREMIUM AVTOMOBIL IJARASI
-            </span>
-            
-            <h1 className="font-display font-light text-5xl md:text-6xl lg:text-7xl xl:text-8xl text-white leading-none">
-              Sayohatni ushbu<br/>
-              <span className="pl-4 md:pl-8 lg:pl-12">yerdan boshlang!</span>
-            </h1>
-            
-            <p className="font-sans font-light text-[#B8C4CC] max-w-sm text-sm leading-relaxed mt-4">
-              O'zbekistondagi eng premium avtomobil ijara xizmati. Toshkentdan dunyoning istalgan nuqtasiga.
-            </p>
-            
-            <div className="mt-8 flex flex-col sm:flex-row items-start sm:items-center gap-4">
-              <button 
-                className="btn-bmw-primary w-full sm:w-auto text-center"
-                data-testid="button-hero-book"
-              >
-                BRON QILISH
-              </button>
-              <button 
-                className="btn-bmw-ghost w-full sm:w-auto text-center"
-                data-testid="button-hero-fleet"
-              >
-                PARKNI KO'RISH
-              </button>
-            </div>
+    <section className="relative h-[100dvh] w-full overflow-hidden">
 
-            <div className="mt-12 pt-8 border-t border-white/10 flex items-center">
-              <div className="flex-1 flex flex-col gap-1 pr-6 border-r border-white/10">
-                <h4 className="font-display font-light text-3xl text-white">500+</h4>
-                <p className="font-sans text-[10px] uppercase tracking-[0.25em] text-white/40">AVTOMOBIL</p>
-              </div>
-              <div className="flex-1 flex flex-col gap-1 px-6 border-r border-white/10">
-                <h4 className="font-display font-light text-3xl text-white">10,000+</h4>
-                <p className="font-sans text-[10px] uppercase tracking-[0.25em] text-white/40">MIJOZ</p>
-              </div>
-              <div className="flex-1 flex flex-col gap-1 pl-6">
-                <h4 className="font-display font-light text-3xl text-white">15 YIL</h4>
-                <p className="font-sans text-[10px] uppercase tracking-[0.25em] text-white/40">TAJRIBA</p>
-              </div>
-            </div>
+      {/* ── Video background ── */}
+      <video
+        autoPlay
+        loop
+        muted
+        playsInline
+        className="absolute inset-0 w-full h-full object-cover"
+        data-testid="hero-video"
+      >
+        <source
+          src="https://assets.mixkit.co/videos/preview/mixkit-driving-a-modern-sports-car-at-high-speed-34710-large.mp4"
+          type="video/mp4"
+        />
+        <source
+          src="https://assets.mixkit.co/videos/preview/mixkit-sports-car-passing-by-in-blurred-light-trail-34695-large.mp4"
+          type="video/mp4"
+        />
+      </video>
+
+      {/* ── Dark overlay (top 40% → solid middle → bottom fade to page bg) ── */}
+      <div className="absolute inset-0 bg-gradient-to-b from-black/70 via-black/50 to-[#080C10]" />
+      {/* Extra lateral vignette for depth */}
+      <div className="absolute inset-0 bg-gradient-to-r from-black/60 via-transparent to-black/30" />
+
+      {/* ── Navbar height spacer ── */}
+      <div className="h-14" />
+
+      {/* ── Main content ── */}
+      <div className="relative z-10 h-[calc(100dvh-56px)] flex flex-col justify-between px-6 md:px-12 lg:px-20 xl:px-28 py-12">
+
+        {/* Top: headline + buttons */}
+        <div className="flex flex-col gap-5 max-w-3xl mt-8 lg:mt-16">
+
+          <motion.span
+            variants={FADE_UP}
+            initial="hidden"
+            animate="visible"
+            custom={0}
+            className="text-[#0099FF] text-[11px] uppercase tracking-[0.35em] font-medium"
+          >
+            Premium Avtomobil Ijarasi
+          </motion.span>
+
+          <motion.h1
+            variants={FADE_UP}
+            initial="hidden"
+            animate="visible"
+            custom={0.1}
+            className="font-display font-light leading-[0.95] text-white"
+            style={{ fontSize: "clamp(2.8rem, 7vw, 6rem)" }}
+          >
+            Sayohatni ushbu<br />
+            <span className="pl-6 md:pl-12 lg:pl-20">yerdan boshlang!</span>
+          </motion.h1>
+
+          <motion.p
+            variants={FADE_UP}
+            initial="hidden"
+            animate="visible"
+            custom={0.22}
+            className="font-sans font-light text-white/60 text-sm leading-relaxed max-w-md mt-1"
+          >
+            O'zbekistondagi eng premium avtomobil ijara xizmati.
+            Toshkentdan dunyoning istalgan nuqtasiga.
+          </motion.p>
+
+          <motion.div
+            variants={FADE_UP}
+            initial="hidden"
+            animate="visible"
+            custom={0.34}
+            className="flex flex-col sm:flex-row gap-3 mt-4"
+          >
+            <button
+              className="btn-bmw-primary"
+              data-testid="button-hero-book"
+            >
+              BRON QILISH
+            </button>
+            <button
+              className="btn-bmw-ghost"
+              data-testid="button-hero-fleet"
+            >
+              PARKNI KO'RISH
+            </button>
           </motion.div>
         </div>
 
-        {/* Right Canvas */}
-        <div className="relative h-[60vh] lg:h-full bg-gradient-to-tr from-[#0E1B2A] to-[#080C10]">
-          {/* Subtle blue glow */}
-          <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-80 h-20 bg-[radial-gradient(circle,rgba(0,153,255,0.1)_0%,transparent_70%)] blur-3xl pointer-events-none" />
-          
-          <motion.div 
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ duration: 1.5, delay: 0.3 }}
-            className="w-full h-full relative"
-          >
-            <CarCanvas />
-          </motion.div>
-        </div>
-        
+        {/* Bottom: stats row — pinned above the page transition */}
+        <motion.div
+          variants={FADE_UP}
+          initial="hidden"
+          animate="visible"
+          custom={0.5}
+          className="flex items-end gap-0 border-t border-white/10 pt-6 pb-2 w-full max-w-lg"
+        >
+          <div className="flex-1 flex flex-col gap-1 pr-6 border-r border-white/10">
+            <span className="font-display font-light text-2xl md:text-3xl text-white">500+</span>
+            <span className="font-sans text-[9px] uppercase tracking-[0.28em] text-white/35">Avtomobil</span>
+          </div>
+          <div className="flex-1 flex flex-col gap-1 px-6 border-r border-white/10">
+            <span className="font-display font-light text-2xl md:text-3xl text-white">10,000+</span>
+            <span className="font-sans text-[9px] uppercase tracking-[0.28em] text-white/35">Mijoz</span>
+          </div>
+          <div className="flex-1 flex flex-col gap-1 pl-6">
+            <span className="font-display font-light text-2xl md:text-3xl text-white">15 Yil</span>
+            <span className="font-sans text-[9px] uppercase tracking-[0.28em] text-white/35">Tajriba</span>
+          </div>
+        </motion.div>
+
       </div>
     </section>
   );
