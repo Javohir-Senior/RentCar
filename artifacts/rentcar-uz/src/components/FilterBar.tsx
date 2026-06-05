@@ -1,23 +1,21 @@
-import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
-import { Calendar, Car, Search, Wallet } from "lucide-react";
 
 export function FilterBar() {
   return (
-    <div className="container mx-auto px-4 relative z-20 -mt-8 mb-20" id="mashinalar">
-      <div className="bg-[#111111] border border-white/[0.08] shadow-[0_-1px_0_rgba(201,168,76,0.2),0_10px_40px_rgba(0,0,0,0.5)] p-6 backdrop-blur-md">
-        <div className="grid grid-cols-1 md:grid-cols-5 gap-6 items-end">
+    <div className="bg-[#0E1318] border-b border-white/5 relative z-20" id="mashinalar">
+      <div className="container mx-auto px-4 md:px-8 py-6">
+        <div className="flex flex-col md:flex-row gap-6 md:gap-0 items-center">
           
-          <div className="space-y-3">
-            <label className="text-xs font-sans text-[#888880] flex items-center gap-2 uppercase tracking-widest">
+          <div className="w-full md:flex-1 space-y-1">
+            <label className="text-[10px] uppercase tracking-widest text-white/40">
               Avtomobil turi
             </label>
             <Select defaultValue="all">
-              <SelectTrigger className="bg-transparent border-0 border-b border-white/10 rounded-none px-0 h-10 text-[#F5F0E8] focus:ring-0 focus:border-[#C9A84C] transition-colors">
+              <SelectTrigger className="bg-transparent border-0 px-0 h-8 text-sm text-white focus:ring-0 shadow-none">
                 <SelectValue placeholder="Tanlang" />
               </SelectTrigger>
-              <SelectContent className="bg-[#1A1A1A] border-white/10 text-[#F5F0E8]">
+              <SelectContent className="bg-[#1A2332] border-white/10 text-white rounded-none">
                 <SelectItem value="all">Barchasi</SelectItem>
                 <SelectItem value="sedan">Premium Sedan</SelectItem>
                 <SelectItem value="suv">Yo'ltanlamas SUV</SelectItem>
@@ -27,42 +25,39 @@ export function FilterBar() {
             </Select>
           </div>
 
-          <div className="hidden md:block w-[1px] h-12 bg-gradient-to-b from-transparent via-[#C9A84C]/30 to-transparent self-center justify-self-center"></div>
+          <div className="hidden md:block w-[1px] h-10 bg-white/[0.07] mx-6"></div>
 
-          <div className="space-y-3">
-            <label className="text-xs font-sans text-[#888880] flex items-center gap-2 uppercase tracking-widest">
+          <div className="w-full md:flex-1 space-y-1">
+            <label className="text-[10px] uppercase tracking-widest text-white/40">
               Narx oralig'i
             </label>
-            <Select defaultValue="any">
-              <SelectTrigger className="bg-transparent border-0 border-b border-white/10 rounded-none px-0 h-10 text-[#F5F0E8] focus:ring-0 focus:border-[#C9A84C] transition-colors">
-                <SelectValue placeholder="Narx" />
-              </SelectTrigger>
-              <SelectContent className="bg-[#1A1A1A] border-white/10 text-[#F5F0E8]">
-                <SelectItem value="any">Istalgan</SelectItem>
-                <SelectItem value="low">100k - 300k UZS</SelectItem>
-                <SelectItem value="mid">300k - 800k UZS</SelectItem>
-                <SelectItem value="high">800k+ UZS</SelectItem>
-              </SelectContent>
-            </Select>
-          </div>
-
-          <div className="hidden md:block w-[1px] h-12 bg-gradient-to-b from-transparent via-[#C9A84C]/30 to-transparent self-center justify-self-center"></div>
-
-          <div className="space-y-3">
-            <label className="text-xs font-sans text-[#888880] flex items-center gap-2 uppercase tracking-widest">
-              Sana
-            </label>
-            <div className="flex items-center gap-2">
-              <Input type="date" className="bg-transparent border-0 border-b border-white/10 rounded-none px-0 h-10 text-[#F5F0E8] focus-visible:ring-0 focus-visible:border-[#C9A84C] [color-scheme:dark] block w-full" />
-              <span className="text-white/20">-</span>
-              <Input type="date" className="bg-transparent border-0 border-b border-white/10 rounded-none px-0 h-10 text-[#F5F0E8] focus-visible:ring-0 focus-visible:border-[#C9A84C] [color-scheme:dark] block w-full" />
+            <div className="flex h-8 items-center text-sm text-white px-0 cursor-default">
+              100k – 500k UZS
             </div>
           </div>
 
-          <div className="flex justify-end md:ml-4">
-            <Button className="h-12 w-full md:w-auto px-8 bg-[#C9A84C] hover:bg-[#E8C97A] text-black font-sans text-xs tracking-widest uppercase font-semibold transition-all group rounded-none" data-testid="button-search">
+          <div className="hidden md:block w-[1px] h-10 bg-white/[0.07] mx-6"></div>
+
+          <div className="w-full md:flex-1 space-y-1">
+            <label className="text-[10px] uppercase tracking-widest text-white/40">
+              Boshlanish sanasi
+            </label>
+            <Input type="date" className="bg-transparent border-0 px-0 h-8 text-sm text-white focus-visible:ring-0 shadow-none [color-scheme:dark] block w-full rounded-none" />
+          </div>
+
+          <div className="hidden md:block w-[1px] h-10 bg-white/[0.07] mx-6"></div>
+
+          <div className="w-full md:flex-1 space-y-1">
+            <label className="text-[10px] uppercase tracking-widest text-white/40">
+              Tugash sanasi
+            </label>
+            <Input type="date" className="bg-transparent border-0 px-0 h-8 text-sm text-white focus-visible:ring-0 shadow-none [color-scheme:dark] block w-full rounded-none" />
+          </div>
+
+          <div className="w-full md:w-auto md:ml-8 mt-4 md:mt-0">
+            <button className="btn-bmw-primary w-full md:w-auto !py-3 !px-10 whitespace-nowrap" data-testid="button-search">
               QIDIRISH
-            </Button>
+            </button>
           </div>
 
         </div>

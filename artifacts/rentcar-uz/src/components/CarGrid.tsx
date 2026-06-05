@@ -1,4 +1,3 @@
-import { Button } from "@/components/ui/button";
 import { Gauge, Users, Fuel, ArrowRight } from "lucide-react";
 
 const cars = [
@@ -66,81 +65,74 @@ const cars = [
 
 export function CarGrid() {
   return (
-    <section className="py-24 bg-[#0A0A0A]" id="mashinalar">
+    <section className="py-24 bg-[#080C10]">
       <div className="container mx-auto px-4">
-        <div className="flex flex-col items-center text-center mb-16">
-          <span className="font-sans text-xs tracking-[0.2em] text-[#C9A84C] uppercase mb-4">
+        <div className="mb-16">
+          <span className="font-sans text-xs tracking-widest text-[#0099FF] uppercase mb-2 block">
             BIZNING AVTOPARK
           </span>
-          <h2 className="text-4xl md:text-5xl font-display font-semibold text-white mb-6">
-            Tanlangan Premium Avtomobillar
+          <h2 className="font-display font-light text-4xl md:text-5xl text-white">
+            Premium Avtomobillar
           </h2>
-          <div className="divider-gold w-24"></div>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
           {cars.map((car) => (
             <div 
               key={car.id}
-              className="group card-luxury relative overflow-hidden"
+              className="group bg-[#0E1318] border border-white/5 transition-colors duration-300 hover:border-[#0099FF]/25 rounded-none overflow-hidden"
               data-testid={`car-card-${car.id}`}
             >
-              <div className="h-56 w-full relative overflow-hidden">
+              <div className="aspect-video w-full relative overflow-hidden">
                 <img 
                   src={car.image} 
                   alt={car.name} 
-                  className="w-full h-full object-cover transition-all duration-700 filter grayscale-[30%] group-hover:grayscale-0 group-hover:scale-105"
+                  className="w-full h-full object-cover filter grayscale-[25%] transition-all duration-700 group-hover:grayscale-0 group-hover:scale-105"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-[#111111] via-transparent to-transparent"></div>
               </div>
 
-              <div className="p-8 relative">
-                <div className="flex justify-between items-start mb-6">
-                  <div>
-                    <span className="inline-block px-3 py-1 border border-[#C9A84C]/40 text-[#C9A84C] text-[10px] uppercase tracking-widest mb-3 rounded-full">
-                      {car.category}
-                    </span>
-                    <h3 className="text-2xl font-display font-semibold text-white tracking-wide">{car.name}</h3>
-                  </div>
+              <div className="p-5">
+                <div className="text-[10px] text-[#0099FF] uppercase tracking-widest mb-2 font-medium">
+                  {car.category}
+                </div>
+                
+                <h3 className="font-display font-normal text-lg text-white mb-1">
+                  {car.name}
+                </h3>
+                
+                <div className="text-sm text-white/60 mb-3">
+                  {car.price} UZS / kun
                 </div>
 
-                <div className="mb-6">
-                  <p className="text-[#888880] font-sans text-sm mb-1">Kunlik tarif</p>
-                  <p className="text-[#F5F0E8] font-sans text-lg">{car.price} UZS <span className="text-xs text-[#555550]">/ kun</span></p>
-                </div>
+                <div className="h-[1px] w-full bg-white/5 my-3"></div>
 
-                <div className="flex justify-between py-4 border-t border-b border-white/[0.04] mb-8">
-                  <div className="flex items-center gap-2 text-[#888880]">
-                    <Gauge className="w-4 h-4 text-[#C9A84C]" />
+                <div className="flex items-center justify-between mb-4">
+                  <div className="flex items-center gap-1.5 text-white/60">
+                    <Gauge className="w-3 h-3 text-white/40" />
                     <span className="text-xs font-sans">{car.speed}</span>
                   </div>
-                  <div className="flex items-center gap-2 text-[#888880]">
-                    <Users className="w-4 h-4 text-[#C9A84C]" />
+                  <div className="flex items-center gap-1.5 text-white/60">
+                    <Users className="w-3 h-3 text-white/40" />
                     <span className="text-xs font-sans">{car.seats}</span>
                   </div>
-                  <div className="flex items-center gap-2 text-[#888880]">
-                    <Fuel className="w-4 h-4 text-[#C9A84C]" />
+                  <div className="flex items-center gap-1.5 text-white/60">
+                    <Fuel className="w-3 h-3 text-white/40" />
                     <span className="text-xs font-sans">{car.fuel}</span>
                   </div>
                 </div>
 
                 <a 
                   href="#" 
-                  className="inline-flex items-center text-[#C9A84C] font-sans text-xs uppercase tracking-widest font-semibold group/btn"
+                  className="inline-flex items-center text-[#0099FF] hover:text-[#33BBFF] font-sans text-xs uppercase tracking-widest transition-colors group/link"
                 >
                   BRON QILISH
-                  <ArrowRight className="w-4 h-4 ml-2 transition-transform group-hover/btn:translate-x-2" />
+                  <ArrowRight className="w-3 h-3 ml-1.5 transition-transform group-hover/link:translate-x-1" />
                 </a>
               </div>
             </div>
           ))}
         </div>
         
-        <div className="mt-16 text-center">
-          <Button variant="outline" className="border-[#C9A84C] text-[#C9A84C] hover:bg-[#C9A84C] hover:text-black rounded-none px-10 h-14 font-sans text-xs tracking-widest uppercase">
-            BARCHA AVTOMOBILLARNI KO'RISH
-          </Button>
-        </div>
       </div>
     </section>
   );

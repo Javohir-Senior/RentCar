@@ -17,7 +17,7 @@ const queryClient = new QueryClient();
 
 function Home() {
   return (
-    <div className="min-h-screen w-full flex flex-col bg-[#0A0A0A]">
+    <div className="min-h-screen w-full flex flex-col bg-[#080C10]">
       <Navbar />
       <main className="flex-1">
         <Hero />

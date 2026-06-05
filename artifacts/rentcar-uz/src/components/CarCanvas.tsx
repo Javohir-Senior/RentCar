@@ -16,10 +16,10 @@ export function CarCanvas() {
 
     try {
       const scene = new THREE.Scene();
-      // Scene Background is transparent or subtle color, handled in CSS/App
+      // Scene Background is transparent
       
       const width = mountRef.current.clientWidth || 600;
-      const height = mountRef.current.clientHeight || 420;
+      const height = mountRef.current.clientHeight || 600;
       const camera = new THREE.PerspectiveCamera(40, width / height, 0.1, 100);
       camera.position.set(0, 2, 8);
 
@@ -34,18 +34,18 @@ export function CarCanvas() {
       scene.add(carGroup);
 
       // Add Lights
-      scene.add(new THREE.AmbientLight(0xffffff, 0.2));
+      scene.add(new THREE.AmbientLight(0xffffff, 0.15));
       
-      const mainLight = new THREE.DirectionalLight(0xffffff, 0.8);
+      const mainLight = new THREE.DirectionalLight(0xffffff, 1.0);
       mainLight.position.set(5, 5, 5);
       scene.add(mainLight);
 
-      const goldFillLight = new THREE.DirectionalLight(0xC9A84C, 0.3);
-      goldFillLight.position.set(-5, 2, -5);
-      scene.add(goldFillLight);
+      const blueFillLight = new THREE.DirectionalLight(0x0099FF, 0.4);
+      blueFillLight.position.set(-4, 2, -4);
+      scene.add(blueFillLight);
 
-      const spotLight = new THREE.SpotLight(0xffffff, 1.5);
-      spotLight.position.set(0, 10, 0);
+      const spotLight = new THREE.SpotLight(0xffffff, 2.0);
+      spotLight.position.set(0, 8, 0);
       spotLight.target = carGroup;
       scene.add(spotLight);
 
@@ -82,9 +82,8 @@ export function CarCanvas() {
       const clock = new THREE.Clock();
 
       const animate = () => {
-        const elapsedTime = clock.getElapsedTime();
         carGroup.rotation.y += 0.002;
-        carGroup.position.y = Math.sin(elapsedTime * 0.5) * 0.08;
+        carGroup.position.y = Math.sin(Date.now() * 0.0005) * 0.08;
         
         if (renderer) {
           renderer.render(scene, camera);
@@ -123,29 +122,28 @@ export function CarCanvas() {
 
   if (webglFailed) {
     return (
-      <div className="w-full h-full min-h-[300px] md:min-h-[600px] flex items-center justify-center relative overflow-hidden rounded-lg">
+      <div className="w-full h-full flex items-center justify-center relative overflow-hidden">
         <img 
-          src="https://images.unsplash.com/photo-1494976388531-d1058494cdd8?w=800&q=80" 
+          src="https://images.unsplash.com/photo-1555215695-3004980ad54e?w=900&q=80" 
           alt="Premium Luxury Car" 
-          className="w-full h-full object-cover object-center rounded-lg opacity-90"
+          className="w-full h-full object-cover object-center"
         />
-        <div className="absolute inset-0 bg-gradient-to-t from-[#0A0A0A] to-transparent"></div>
       </div>
     );
   }
 
   return (
-    <div className="relative w-full h-full min-h-[300px] md:min-h-[600px]">
+    <div className="relative w-full h-full">
       {!modelLoaded && (
         <div className="absolute inset-0 flex items-center justify-center z-10">
-          <div className="w-16 h-16 rounded-full border border-[#C9A84C] flex items-center justify-center animate-pulse shadow-[0_0_15px_rgba(201,168,76,0.3)]">
-            <span className="font-serif-light italic text-[#C9A84C] text-2xl">R</span>
+          <div className="w-16 h-16 rounded-full border border-[#0099FF] flex items-center justify-center animate-pulse shadow-[0_0_15px_rgba(0,153,255,0.3)]">
+            <span className="font-display text-[#0099FF] text-xl font-bold">RC</span>
           </div>
         </div>
       )}
       <div 
         ref={mountRef}
-        className={`w-full h-full transition-opacity duration-1000 ${modelLoaded ? 'opacity-100' : 'opacity-0'}`}
+        className={`w-full h-[100vh] lg:h-full transition-opacity duration-1000 ${modelLoaded ? 'opacity-100' : 'opacity-0'}`}
         data-testid="car-canvas"
       />
     </div>

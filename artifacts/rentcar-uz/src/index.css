@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Inter:wght@300;400;500;600&family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300;1,400&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=BMW+Type+Next:wght@400;700&family=Inter:wght@300;400;500;600&family=Roboto+Condensed:wght@300;400;700&display=swap');
 @import "tailwindcss";
 @import "tw-animate-css";
 @plugin "@tailwindcss/typography";
@@ -50,8 +50,7 @@
   --color-sidebar-ring: hsl(var(--sidebar-ring));
 
   --font-sans: 'Inter', sans-serif;
-  --font-display: 'Playfair Display', serif;
-  --font-serif-light: 'Cormorant Garamond', serif;
+  --font-display: 'Roboto Condensed', 'Inter', sans-serif;
 
   --radius-sm: calc(var(--radius) - 4px);
   --radius-md: calc(var(--radius) - 2px);
@@ -60,76 +59,76 @@
 }
 
 :root {
-  --background: 0 0% 4%;
-  --foreground: 40 33% 95%;
-  --card: 0 0% 7%;
-  --card-foreground: 40 33% 95%;
-  --border: 0 0% 12%;
-  --input: 0 0% 12%;
-  --ring: 43 55% 55%;
-  --primary: 43 55% 55%;
+  --background: 210 33% 4%;
+  --foreground: 0 0% 100%;
+  --card: 210 25% 7%;
+  --card-foreground: 0 0% 100%;
+  --border: 210 20% 12%;
+  --input: 210 20% 14%;
+  --ring: 204 100% 50%;
+  --primary: 204 100% 50%;
   --primary-foreground: 0 0% 0%;
-  --secondary: 0 0% 10%;
-  --secondary-foreground: 40 33% 95%;
-  --muted: 0 0% 10%;
-  --muted-foreground: 30 3% 53%;
-  --accent: 0 0% 12%;
-  --accent-foreground: 40 33% 95%;
+  --secondary: 210 25% 10%;
+  --secondary-foreground: 0 0% 100%;
+  --muted: 210 20% 12%;
+  --muted-foreground: 204 10% 55%;
+  --accent: 204 100% 50%;
+  --accent-foreground: 0 0% 0%;
   --destructive: 0 84% 60%;
   --destructive-foreground: 0 0% 100%;
-  --popover: 0 0% 7%;
-  --popover-foreground: 40 33% 95%;
-  --popover-border: 0 0% 12%;
-  --sidebar: 0 0% 5%;
-  --sidebar-foreground: 40 33% 95%;
-  --sidebar-border: 0 0% 12%;
-  --sidebar-primary: 43 55% 55%;
+  --popover: 210 25% 7%;
+  --popover-foreground: 0 0% 100%;
+  --popover-border: 210 20% 12%;
+  --sidebar: 210 33% 5%;
+  --sidebar-foreground: 0 0% 100%;
+  --sidebar-border: 210 20% 12%;
+  --sidebar-primary: 204 100% 50%;
   --sidebar-primary-foreground: 0 0% 0%;
-  --sidebar-accent: 0 0% 12%;
-  --sidebar-accent-foreground: 40 33% 95%;
-  --sidebar-ring: 43 55% 55%;
-  --chart-1: 43 55% 55%;
-  --chart-2: 200 70% 50%;
-  --chart-3: 160 60% 45%;
-  --chart-4: 0 70% 55%;
-  --chart-5: 280 65% 55%;
-  --radius: 0.25rem;
+  --sidebar-accent: 210 20% 12%;
+  --sidebar-accent-foreground: 0 0% 100%;
+  --sidebar-ring: 204 100% 50%;
+  --chart-1: 204 100% 50%;
+  --chart-2: 180 100% 40%;
+  --chart-3: 142 76% 36%;
+  --chart-4: 38 92% 50%;
+  --chart-5: 0 84% 60%;
+  --radius: 0px;
 }
 .dark {
-  --background: 0 0% 4%;
-  --foreground: 40 33% 95%;
-  --card: 0 0% 7%;
-  --card-foreground: 40 33% 95%;
-  --border: 0 0% 12%;
-  --input: 0 0% 12%;
-  --ring: 43 55% 55%;
-  --primary: 43 55% 55%;
+  --background: 210 33% 4%;
+  --foreground: 0 0% 100%;
+  --card: 210 25% 7%;
+  --card-foreground: 0 0% 100%;
+  --border: 210 20% 12%;
+  --input: 210 20% 14%;
+  --ring: 204 100% 50%;
+  --primary: 204 100% 50%;
   --primary-foreground: 0 0% 0%;
-  --secondary: 0 0% 10%;
-  --secondary-foreground: 40 33% 95%;
-  --muted: 0 0% 10%;
-  --muted-foreground: 30 3% 53%;
-  --accent: 0 0% 12%;
-  --accent-foreground: 40 33% 95%;
+  --secondary: 210 25% 10%;
+  --secondary-foreground: 0 0% 100%;
+  --muted: 210 20% 12%;
+  --muted-foreground: 204 10% 55%;
+  --accent: 204 100% 50%;
+  --accent-foreground: 0 0% 0%;
   --destructive: 0 84% 60%;
   --destructive-foreground: 0 0% 100%;
-  --popover: 0 0% 7%;
-  --popover-foreground: 40 33% 95%;
-  --popover-border: 0 0% 12%;
-  --sidebar: 0 0% 5%;
-  --sidebar-foreground: 40 33% 95%;
-  --sidebar-border: 0 0% 12%;
-  --sidebar-primary: 43 55% 55%;
+  --popover: 210 25% 7%;
+  --popover-foreground: 0 0% 100%;
+  --popover-border: 210 20% 12%;
+  --sidebar: 210 33% 5%;
+  --sidebar-foreground: 0 0% 100%;
+  --sidebar-border: 210 20% 12%;
+  --sidebar-primary: 204 100% 50%;
   --sidebar-primary-foreground: 0 0% 0%;
-  --sidebar-accent: 0 0% 12%;
-  --sidebar-accent-foreground: 40 33% 95%;
-  --sidebar-ring: 43 55% 55%;
-  --chart-1: 43 55% 55%;
-  --chart-2: 200 70% 50%;
-  --chart-3: 160 60% 45%;
-  --chart-4: 0 70% 55%;
-  --chart-5: 280 65% 55%;
-  --radius: 0.25rem;
+  --sidebar-accent: 210 20% 12%;
+  --sidebar-accent-foreground: 0 0% 100%;
+  --sidebar-ring: 204 100% 50%;
+  --chart-1: 204 100% 50%;
+  --chart-2: 180 100% 40%;
+  --chart-3: 142 76% 36%;
+  --chart-4: 38 92% 50%;
+  --chart-5: 0 84% 60%;
+  --radius: 0px;
 }
 
 @layer base {
@@ -137,9 +136,9 @@
     @apply border-border;
   }
   body {
-    background-color: #0A0A0A;
-    color: #F5F0E8;
-    font-family: 'Inter', sans-serif;
+    background-color: #080C10;
+    color: #FFFFFF;
+    font-family: 'Roboto Condensed', 'Inter', sans-serif;
     -webkit-font-smoothing: antialiased;
     @apply antialiased selection:bg-primary/30 selection:text-primary-foreground;
   }
@@ -148,26 +147,52 @@
   }
 }
 
-.font-display { font-family: 'Playfair Display', serif; }
-.font-serif-light { font-family: 'Cormorant Garamond', serif; }
+.font-display { font-family: 'Roboto Condensed', 'Inter', sans-serif; font-weight: 300; letter-spacing: -0.01em; }
 
-/* Gold shimmer effect for accent text */
-.text-gold { color: #C9A84C; }
-.text-gold-light { color: #E8C97A; }
-
-/* Premium divider */
-.divider-gold {
+/* BMW-style nav underline animation */
+.nav-link-bmw { position: relative; }
+.nav-link-bmw::after {
+  content: '';
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  width: 0;
   height: 1px;
-  background: linear-gradient(90deg, transparent, #C9A84C, transparent);
+  background: #0099FF;
+  transition: width 0.3s cubic-bezier(0.4,0,0.2,1);
+}
+.nav-link-bmw:hover::after { width: 100%; }
+
+/* Blue glow button */
+.btn-bmw-primary {
+  background: transparent;
+  border: 1px solid #FFFFFF;
+  color: #FFFFFF;
+  padding: 12px 28px;
+  font-size: 13px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  transition: all 0.3s cubic-bezier(0.4,0,0.2,1);
+  cursor: pointer;
+}
+.btn-bmw-primary:hover {
+  background: rgba(255,255,255,0.08);
+  border-color: #0099FF;
+  color: #33BBFF;
+  box-shadow: 0 0 20px rgba(0,153,255,0.15);
 }
 
-/* Card base */
-.card-luxury {
-  background: #111111;
-  border: 1px solid rgba(255,255,255,0.06);
-  transition: border-color 0.3s ease, transform 0.4s cubic-bezier(0.25,0.46,0.45,0.94);
+.btn-bmw-ghost {
+  background: transparent;
+  border: 1px solid rgba(255,255,255,0.25);
+  color: rgba(255,255,255,0.7);
+  padding: 12px 28px;
+  font-size: 13px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  transition: all 0.3s cubic-bezier(0.4,0,0.2,1);
 }
-.card-luxury:hover {
-  border-color: rgba(201,168,76,0.3);
-  transform: translateY(-4px);
+.btn-bmw-ghost:hover {
+  border-color: rgba(255,255,255,0.5);
+  color: #FFFFFF;
 }
