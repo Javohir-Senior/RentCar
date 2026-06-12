@@ -27,5 +27,5 @@
     }
   },
   "include": ["src", "lib"],
-  "exclude": ["node_modules", "dist", "**/*.test.ts", "**/*.test.tsx", ".agents", ".local"]
+  "exclude": ["node_modules", "dist", "**/*.test.ts", "**/*.test.tsx", ".agents/**", ".local/**", ".git"]
 }

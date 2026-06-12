@@ -1,5 +1,6 @@
-.agents
-.local
+# Exclude unwanted directories and files
+.agents/**
+.local/**
 .git
 .gitignore
 .replit
@@ -12,3 +13,6 @@ npm-debug.log
 .env
 .env.local
 replit.md
+.npmrc
+**/.agents
+**/.local
