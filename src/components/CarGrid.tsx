@@ -49,7 +49,7 @@ export function CarGrid() {
                   <img
                     src={car.image}
                     alt={car.name}
-                    className="w-full h-full object-cover filter grayscale-[25%] transition-all duration-700 group-hover:grayscale-0 group-hover:scale-105"
+                    className="w-full h-full object-cover filter grayscale-25 transition-all duration-700 group-hover:grayscale-0 group-hover:scale-105"
                   />
                   {isOutOfStock && (
                     <div className="absolute inset-0 flex items-center justify-center bg-black/50 text-white font-bold tracking-widest uppercase">
@@ -72,7 +72,7 @@ export function CarGrid() {
                   <div className="text-sm text-white/60 mb-3">
                     {car.price} UZS / kun
                   </div>
-                  <div className="h-[1px] w-full bg-white/5 my-3"></div>
+                  <div className="h-px w-full bg-white/5 my-3"></div>
 
                   <div className="flex items-center justify-between mb-4">
                     <div className="flex items-center gap-1.5 text-white/60">

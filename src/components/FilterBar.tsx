@@ -25,7 +25,7 @@ export function FilterBar() {
             </Select>
           </div>
 
-          <div className="hidden md:block w-[1px] h-10 bg-white/[0.07] mx-6"></div>
+          <div className="hidden md:block w-px h-10 bg-white/[0.07] mx-6"></div>
 
           <div className="w-full md:flex-1 space-y-1">
             <label className="text-[10px] uppercase tracking-widest text-white/40">
@@ -36,26 +36,26 @@ export function FilterBar() {
             </div>
           </div>
 
-          <div className="hidden md:block w-[1px] h-10 bg-white/[0.07] mx-6"></div>
+          <div className="hidden md:block w-px h-10 bg-white/[0.07] mx-6"></div>
 
           <div className="w-full md:flex-1 space-y-1">
             <label className="text-[10px] uppercase tracking-widest text-white/40">
               Boshlanish sanasi
             </label>
-            <Input type="date" className="bg-transparent border-0 px-0 h-8 text-sm text-white focus-visible:ring-0 shadow-none [color-scheme:dark] block w-full rounded-none" />
+            <Input type="date" className="bg-transparent border-0 px-0 h-8 text-sm text-white focus-visible:ring-0 shadow-none scheme-dark block w-full rounded-none" />
           </div>
 
-          <div className="hidden md:block w-[1px] h-10 bg-white/[0.07] mx-6"></div>
+          <div className="hidden md:block w-px h-10 bg-white/[0.07] mx-6"></div>
 
           <div className="w-full md:flex-1 space-y-1">
             <label className="text-[10px] uppercase tracking-widest text-white/40">
               Tugash sanasi
             </label>
-            <Input type="date" className="bg-transparent border-0 px-0 h-8 text-sm text-white focus-visible:ring-0 shadow-none [color-scheme:dark] block w-full rounded-none" />
+            <Input type="date" className="bg-transparent border-0 px-0 h-8 text-sm text-white focus-visible:ring-0 shadow-none scheme-dark block w-full rounded-none" />
           </div>
 
           <div className="w-full md:w-auto md:ml-8 mt-4 md:mt-0">
-            <button className="btn-bmw-primary w-full md:w-auto !py-3 !px-10 whitespace-nowrap" data-testid="button-search">
+            <button className="btn-bmw-primary w-full md:w-auto py-3! px-10! whitespace-nowrap" data-testid="button-search">
               QIDIRISH
             </button>
           </div>

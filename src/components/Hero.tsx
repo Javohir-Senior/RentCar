@@ -12,7 +12,7 @@ const FADE_UP: any = {
 
 export function Hero() {
   return (
-    <section className="relative h-[100dvh] w-full overflow-hidden">
+    <section className="relative h-dvh w-full overflow-hidden">
       {/* ── Video background ── */}
       <video
         autoPlay
@@ -29,9 +29,9 @@ export function Hero() {
       </video>
 
       {/* ── Dark overlay (top 40% → solid middle → bottom fade to page bg) ── */}
-      <div className="absolute inset-0 bg-gradient-to-b from-black/70 via-black/50 to-[#080C10]" />
+      <div className="absolute inset-0 bg-linear-to-b from-black/70 via-black/50 to-[#080C10]" />
       {/* Extra lateral vignette for depth */}
-      <div className="absolute inset-0 bg-gradient-to-r from-black/60 via-transparent to-black/30" />
+      <div className="absolute inset-0 bg-linear-to-r from-black/60 via-transparent to-black/30" />
 
       {/* ── Navbar height spacer ── */}
       <div className="h-14" />

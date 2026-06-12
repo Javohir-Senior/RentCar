@@ -140,7 +140,7 @@ export function Navbar() {
       {/* Mobile Nav */}
       <div
         className={`md:hidden absolute top-full left-0 w-full bg-[#080C10]/95 backdrop-blur-xl border-b border-white/5 transition-all duration-300 overflow-hidden ${
-          mobileMenuOpen ? "max-h-[400px] py-6" : "max-h-0"
+          mobileMenuOpen ? "max-h-100 py-6" : "max-h-0"
         }`}
       >
         <div className="flex flex-col items-center gap-6">
@@ -158,7 +158,7 @@ export function Navbar() {
           {/* Mobile versiyada tugma yoki chiqish logikasi */}
           {user ? (
             <div className="flex flex-col items-center gap-2 w-full px-6">
-              <span className="text-xs text-gray-400 truncate max-w-[200px]">{user.email}</span>
+              <span className="text-xs text-gray-400 truncate max-w-50">{user.email}</span>
               <button
                 onClick={handleLogout}
                 className="w-48 py-2 px-6 text-sm font-semibold text-red-400 border border-red-500/30 bg-red-500/10 rounded-md hover:bg-red-500/20 transition-colors flex items-center justify-center gap-2"

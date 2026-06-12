@@ -173,13 +173,13 @@ const AdminManagement = () => {
                 Omborda: {itm.count} ta
               </p>
               <div className="grid grid-cols-2 gap-2 mt-4 text-[11px] text-slate-400">
-                <div className="p-2 bg-white/[0.02] rounded-lg border border-white/5">
+                <div className="p-2 bg-white/2 rounded-lg border border-white/5">
                   ⛽ {itm.fuel}
                 </div>
-                <div className="p-2 bg-white/[0.02] rounded-lg border border-white/5">
+                <div className="p-2 bg-white/2 rounded-lg border border-white/5">
                   ⚡ {itm.speed} km/h
                 </div>
-                <div className="p-2 bg-white/[0.02] rounded-lg border border-white/5">
+                <div className="p-2 bg-white/2 rounded-lg border border-white/5">
                   💺 {itm.seats} o'rindiq
                 </div>
               </div>
