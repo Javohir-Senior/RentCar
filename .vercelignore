@@ -1,0 +1,14 @@
+.agents
+.local
+.git
+.gitignore
+.replit
+.replitignore
+node_modules
+npm-debug.log
+.tsbuildinfo
+*.test.ts
+*.test.tsx
+.env
+.env.local
+replit.md
