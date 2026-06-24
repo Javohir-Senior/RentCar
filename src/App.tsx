@@ -4,7 +4,6 @@ import { TooltipProvider } from "./components/ui/tooltip";
 import NotFound from "./pages/not-found";
 import { Navbar } from "./components/Navbar";
 import { Hero } from "./components/Hero";
-import { FilterBar } from "./components/FilterBar";
 import { CarGrid } from "./components/CarGrid";
 import { Features } from "./components/Features";
 import { Gallery } from "./components/Gallery";
@@ -27,7 +26,6 @@ function Home() {
       <Navbar />
       <main className="flex-1">
         <Hero />
-        <FilterBar />
         <CarGrid />
         <Features />
         <Gallery />
