@@ -69,7 +69,7 @@ export function Navbar() {
           <span className="font-display font-bold text-xl text-[#0099FF]">UZ</span>
         </Link>
 
-        {/* Desktop Nav */}
+  
         <nav className="hidden md:flex items-center gap-8 h-full">
           {navLinks.map((link) => (
             <a
@@ -83,7 +83,7 @@ export function Navbar() {
           ))}
         </nav>
 
-        {/* Desktop Profil / Kirish qismi */}
+
         <div className="hidden md:block relative" ref={dropdownRef}>
           {user ? (
             <div>
@@ -100,7 +100,6 @@ export function Navbar() {
                 )}
               </button>
 
-              {/* Chiqish menyusi (Dropdown) */}
               {profileOpen && (
                 <div className="absolute right-0 mt-2 w-44 bg-[#111827] border border-gray-800 rounded-lg shadow-xl py-1 z-50 animate-in fade-in slide-in-from-top-1 duration-200">
                   <div className="px-4 py-2 text-xs text-gray-400 truncate border-b border-gray-800">
@@ -137,7 +136,6 @@ export function Navbar() {
         </button>
       </div>
 
-      {/* Mobile Nav */}
       <div
         className={`md:hidden absolute top-full left-0 w-full bg-[#080C10]/95 backdrop-blur-xl border-b border-white/5 transition-all duration-300 overflow-hidden ${
           mobileMenuOpen ? "max-h-100 py-6" : "max-h-0"
