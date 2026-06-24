@@ -8,6 +8,5 @@
   "framework": "vite",
   "git": {
     "deploymentEnabled": true
-  },
-  "skipAutoDetection": true
+  }
 }
