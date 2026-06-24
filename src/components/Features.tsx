@@ -72,7 +72,7 @@ export function Features() {
               key={idx} 
               className="bg-[#141B22] border border-white/5 p-8 group relative transition-colors duration-300 rounded-none"
             >
-              <div className="absolute top-0 left-0 w-full h-[2px] bg-[#0099FF] scale-x-0 group-hover:scale-x-100 transition-transform duration-500 origin-left"></div>
+              <div className="absolute top-0 left-0 w-full h-0.5 bg-[#0099FF] scale-x-0 group-hover:scale-x-100 transition-transform duration-500 origin-left"></div>
               
               <div className="mb-6 opacity-80 group-hover:opacity-100 transition-opacity">
                 {feat.icon}

@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { Eye, EyeOff, CheckCircle2, AlertCircle } from "lucide-react";
 import { signInWithEmailAndPassword } from "firebase/auth";
@@ -10,7 +10,6 @@ const LoginPage = () => {
   const [showPassword, setShowPassword] = useState(false);
 
   const isEmailValid = email.includes("@") && email.includes(".");
-  const isPasswordValid = password.length >= 6;
 
   const navigate = useNavigate();
 

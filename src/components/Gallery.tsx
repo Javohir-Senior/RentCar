@@ -13,7 +13,7 @@ export function Gallery() {
           <img 
             src={photo} 
             alt={`Gallery image ${idx + 1}`} 
-            className="w-full h-full object-cover filter grayscale-[30%] transition-transform duration-700 group-hover:grayscale-0 group-hover:scale-[1.04]"
+            className="w-full h-full object-cover filter grayscale-30 transition-transform duration-700 group-hover:grayscale-0 group-hover:scale-[1.04]"
           />
         </div>
       ))}

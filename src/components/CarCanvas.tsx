@@ -79,8 +79,6 @@ export function CarCanvas() {
         setWebglFailed(true);
       });
 
-      const clock = new THREE.Clock();
-
       const animate = () => {
         carGroup.rotation.y += 0.002;
         carGroup.position.y = Math.sin(Date.now() * 0.0005) * 0.08;
@@ -145,7 +143,7 @@ export function CarCanvas() {
       )}
       <div 
         ref={mountRef}
-        className={`w-full h-[100vh] lg:h-full transition-opacity duration-1000 ${modelLoaded ? 'opacity-100' : 'opacity-0'}`}
+        className={`w-full h-screen lg:h-full transition-opacity duration-1000 ${modelLoaded ? 'opacity-100' : 'opacity-0'}`}
         data-testid="car-canvas"
       />
     </div>

@@ -1,6 +1,6 @@
 import { collection, doc, getDoc, addDoc, updateDoc } from "firebase/firestore";
 import { useEffect, useState } from "react";
-import { db, auth } from "../../firebase.config";
+import { db, } from "../../firebase.config";
 import { useParams, useNavigate } from "react-router-dom";
 import { getAuth } from "firebase/auth";
 

@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
-import { Package, Clock, CheckCircle2, ChevronRight, ArrowRight } from "lucide-react";
-import { Navbar } from "@/components/Navbar";
+import { Package, Clock, CheckCircle2, ChevronRight } from "lucide-react";
+import { Navbar } from "../components/Navbar";
 import { collection, getDocs, query, where } from "firebase/firestore";
 import { getAuth, onAuthStateChanged } from "firebase/auth";
 import { db } from "../../firebase.config";
@@ -59,7 +59,7 @@ const OrdersPage = () => {
               >
                 <div className="flex items-center justify-between">
                   <div className="flex items-center gap-6">
-                    <div className="p-4 bg-white/[0.03] rounded-xl border border-white/5">
+                    <div className="p-4 bg-white/3 rounded-xl border border-white/5">
                       <Package size={24} className="text-slate-400" />
                     </div>
                     <div>

@@ -1,6 +1,4 @@
 import { motion } from "framer-motion";
-import { Link } from "react-router-dom";
-
 const FADE_UP: any = {
   hidden: { opacity: 0, y: 28 },
   visible: (delay = 0) => ({

@@ -1,7 +1,7 @@
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
-import { Toaster } from "@/components/ui/toaster";
-import { TooltipProvider } from "@/components/ui/tooltip";
-import NotFound from "@/pages/not-found";
+import { Toaster } from "./components/ui/toaster";
+import { TooltipProvider } from "./components/ui/tooltip";
+import NotFound from "./pages/not-found";
 import { Navbar } from "./components/Navbar";
 import { Hero } from "./components/Hero";
 import { FilterBar } from "./components/FilterBar";
