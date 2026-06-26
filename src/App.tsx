@@ -17,6 +17,7 @@ import AdminManagement from "./pages/Admin-Management";
 import Buyurtmalar from "./pages/Buyurtmalar";
 import OrderDetailsPage from "./pages/OrderDetailsPage";
 import DateManager from "./pages/DateManager";
+import AdminOrders from "./pages/Admin";
 
 const queryClient = new QueryClient();
 
@@ -45,11 +46,12 @@ function App() {
             <Route path="/" element={<Home />} />
             <Route path="/login" element={<Login />} />
             <Route path="/register" element={<Register />} />
-            <Route path="/admin-Management" element={<AdminManagement />} />
+            <Route path="/admin" element={<AdminManagement />} />
             <Route path="/bronqilish/:id" element={<BookingModal />} />
             <Route path="/buyurtmalar" element={<Buyurtmalar />} />
             <Route path="/buyurtmalar/:id" element={<OrderDetailsPage />} />
             <Route path="/admin/date-management" element={<DateManager />} />
+            <Route path="/admin-Management" element={<AdminOrders />} />
             <Route path="*" element={<NotFound />} />
           </Routes>
         </BrowserRouter>

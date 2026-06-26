@@ -1,8 +1,6 @@
-import React, { useEffect, useState } from "react";
-import { Link, useNavigate } from "react-router-dom";
-import { signOut } from "firebase/auth";
-import { auth, db } from "../../firebase.config";
-import { Edit, Plus, Trash2, Car, LogOut, X } from "lucide-react";
+import { useEffect, useState } from "react";
+import {  db } from "../../firebase.config";
+import { Edit, Plus, Trash2, X } from "lucide-react";
 import {
   addDoc,
   collection,
@@ -12,9 +10,9 @@ import {
   updateDoc,
   increment,
 } from "firebase/firestore";
+import Navber from "./Navber";
 
 const AdminManagement = () => {
-  const navigate = useNavigate();
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [cars, setCars] = useState<any>([]);
   const [current, setCurrent] = useState<string | null>(null);
@@ -60,14 +58,7 @@ const AdminManagement = () => {
     });
   };
 
-  const handleLogout = async () => {
-    try {
-      await signOut(auth);
-      navigate("/");
-    } catch (error) {
-      console.error("Xatolik:", error);
-    }
-  };
+
 
   function save() {
     const getCol = collection(db, "cars");
@@ -115,34 +106,8 @@ const AdminManagement = () => {
 
   return (
     <div className="min-h-screen bg-[#050505] text-white p-4 sm:p-6">
-      <nav className="flex items-center justify-between bg-[#090909] border border-white/10 px-6 py-4 mb-8 rounded-2xl">
-        <div className="flex items-center gap-2">
-          <div className="bg-emerald-500 p-2 rounded-xl text-black">
-            <Car size={20} strokeWidth={3} />
-          </div>
-          <span className="font-bold text-lg">
-            AutoRent <span className="text-emerald-500">Admin</span>
-          </span>
-        </div>
-        {/* <Link
-          to="/admin/date-management"
-          className="px-4 py-2 bg-emerald-500/10 text-emerald-500 rounded-xl text-xs font-bold hover:bg-emerald-500 hover:text-black transition-all"
-        >
-          Vaqtni boshqarish
-        </Link> */}
-        <div
-          onClick={handleLogout}
-          className="flex items-center gap-3 cursor-pointer group"
-        >
-          <div className="text-right hidden sm:block">
-            <p className="text-xs font-bold text-white">Admin</p>
-            <p className="text-[10px] text-slate-500">Chiqish</p>
-          </div>
-          <div className="w-9 h-9 rounded-full bg-rose-500/10 flex items-center justify-center text-rose-400 border border-rose-500/20 group-hover:bg-rose-500 group-hover:text-white transition-all">
-            <LogOut size={16} />
-          </div>
-        </div>
-      </nav>
+    
+    <Navber/>
 
       <div className="flex justify-between items-center bg-[#090909] p-4 border border-white/5 rounded-2xl mb-6">
         <span className="text-xs text-slate-400 font-medium">
